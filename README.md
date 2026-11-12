@@ -59,6 +59,15 @@
   <p>
     Luego, en el método llamado "Altura", se crean dos variables: una para saber la altura actual, que será igual al valor del slider, y la posición, que será igual a la posición actual del robot.
   </p>
+  <p>
+    Después se verifica que el valor de la lever sea true; si es así, entonces se accede al switch donde está la lógica para que el robot suba y baje. En el caso de que la variable "_alturaActual" sea mayor o igual a 0 y que sea menor a 0.25, entonces el robot se quedará abajo; ahora, si es mayor o igual a 0.25 y menor o igual a 0.5, este subirá al piso 1. Esto ocurre igual con el caso que le sigue, y al final, si es mayor o igual a 0.75 y menor o igual a 1, entonces subirá al piso 2.
+  </p>
+  <p>
+    Ahora, en caso de que el valor de la lever sea false, entonces la altura será de 0.2, lo que sería igual a estar en el suelo.
+  </p>
+  <p>
+    Y por último, se guarda el valor de "_alturaActual" del eje "y" en la variable "_posicionRobot" y luego esta se aplica a la posición local del robot.
+  </p>
   <img width="429" height="648" alt="Fly2" src="https://github.com/user-attachments/assets/1a4d66c9-954b-41d3-950b-119bf1badd1b" />
   
 
