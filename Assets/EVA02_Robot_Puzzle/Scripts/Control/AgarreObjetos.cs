@@ -6,13 +6,10 @@ public class AgarreObjetos : MonoBehaviour
 	public float _maxDistancia = 0.15f;
 	public LayerMask _caja;
 	public XRKnob xRKnob;
-
-	// Guarda el objeto que tenemos agarrado actualmente (null si no hay ninguno)
 	private Transform _objetoAgarrado = null;
 
     public void AgarreCaja()
 	{
-		// Si ya hay un objeto agarrado, el botón ahora actúa como "soltar"
 		if (_objetoAgarrado != null)
 		{
 			SoltarObjeto(_objetoAgarrado);
@@ -44,8 +41,6 @@ public class AgarreObjetos : MonoBehaviour
 
 					_objetoAgarrado = _cajaTransform;
 				}
-
-				// Ya encontramos un objeto agarrable en esta dirección: no seguimos buscando
 				break;
 			}
 		}
