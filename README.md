@@ -126,7 +126,7 @@
   <img width="556" height="139" alt="Block4" src="https://github.com/user-attachments/assets/de50afcc-2fcc-4510-a2a1-62aed2dd9175" />
 
  <h2>Resultado</h2>
- <img width="434" height="244" alt="Adobe Express - VR_Video_Robot (online-video-cutter com)" src="https://github.com/user-attachments/assets/b32f3a29-64f6-4f7c-9b84-fec7cebbeeca" />
+ <img width="854" height="480" alt="Adobe Express - VR_Video_Robot (online-video-cutter com)" src="https://github.com/user-attachments/assets/b32f3a29-64f6-4f7c-9b84-fec7cebbeeca" />
  <img width="854" height="480" alt="VR_Video_Robot (online-video-cutter com) (1)" src="https://github.com/user-attachments/assets/bd02a99a-9fac-4c3c-bfef-06ea5cfef28b" />
  <img width="854" height="480" alt="VR_Video_Robot (online-video-cutter com) (2)" src="https://github.com/user-attachments/assets/f4480982-3d9a-427c-8889-6277c065b730" />
  <img width="854" height="480" alt="VR_Video_Robotonline-video-cutter com31-ezgif com-optimize" src="https://github.com/user-attachments/assets/ccf1682b-2bfe-46c2-94db-b29dd20fbae7" />
