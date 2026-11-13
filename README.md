@@ -38,7 +38,9 @@
   <p>
     Luego se iguala la variable "_rb" para que sea igual al Rigidbody del robot y se activa el "isKinematic" para este.
   </p>
+  
   <img width="502" height="372" alt="Move1" src="https://github.com/user-attachments/assets/8f9777e1-5da0-48c1-9c88-bd15b654601c" />
+  
   <p>
     En el método "Movimiento", primero se crean 2 variables, "_vauleX" y "_vauleY"; estas tomarán los valores del joystick en sus respectivos ejes.
   </p>
@@ -48,14 +50,18 @@
   <P>
     Esta lógica se aplica a los 4 lados para determinar en qué dirección después se aplicará la fuerza, llamando al método "MoverRobot", el cual consiste en que, si la dirección es igual a 0, entonces no hace nada para que no se gasten recursos, y después, si se encuentra el Rigidbody, entonces se le aplicará una fuerza al robot calculando su posición actual y sumando la dirección multiplicada por la velocidad y Time.deltaTime.
   </P>
+  
   <img width="802" height="636" alt="Move2" src="https://github.com/user-attachments/assets/aab0a0c1-423f-4ebc-a69c-8786444688c2" />
+  
   <p>
     Ahora, para que el robot vuele, primero se crean tres variables: dos para llamar a scripts y una para almacenar los datos del transform del robot.
   </p>
   <p>
     El método "volar" se creó para tener una referencia de cuándo se activaba o no el vuelo, dependiendo del valor de la lever, si era true o false; en cualquiera de los 2 casos, al final acaba llamando al método "Altura". 
   </p>
+  
   <img width="620" height="481" alt="Fly1" src="https://github.com/user-attachments/assets/bdce88c6-e4b2-4c7d-9bed-81e8b31b75f7" />
+  
   <p>
     Luego, en el método llamado "Altura", se crean dos variables: una para saber la altura actual, que será igual al valor del slider, y la posición, que será igual a la posición actual del robot.
   </p>
@@ -68,16 +74,18 @@
   <p>
     Y por último, se guarda el valor de "_alturaActual" del eje "y" en la variable "_posicionRobot" y luego esta se aplica a la posición local del robot.
   </p>
+  
   <img width="429" height="648" alt="Fly2" src="https://github.com/user-attachments/assets/1a4d66c9-954b-41d3-950b-119bf1badd1b" />
   
-
 <h3>
   Agarrar/Soltar/Escalar bloques
 </h3>
   <p>
     Para saber cómo funciona el agarrar, soltar y escalar los bloques, lo primero es saber qué variables se usan; en este caso, un float para la distancia máxima, un LayerMask que servirá para detectar los bloques, xRKnob para luego buscar el valor de 0 a 1 de la perilla y un transform para saber si está o no agarrando un bloque.
   </p>
+  
   <img width="359" height="166" alt="Block1" src="https://github.com/user-attachments/assets/7fadc94e-7eb0-4ae8-91bb-81a94a42fc4b" />
+  
   <p>
     En el método "AgarreCaja", lo primero es verificar si el robot tiene un bloque agarrado; si es así, se llama al método "SoltarObjeto" y después se finaliza su ejecución para que no vuelva a agarrar el bloque.
   </p>
@@ -99,13 +107,22 @@
   <p>
     Llegando al if, se pregunta si rigidbody es true y el fixedjoint es nulo. En caso de ser así, entonces al rigidbody se le quita la gravedad, se le añade un componente FixedJoint, se conecta mediante el FixedJoint al robot y "_objetoAgarrado" pasa a ser "_cajaTransform" para indicar que tiene algo en él. Por último, al salir del if, detiene la búsqueda de un bloque para que no agarre otra caja.
   </p>
+  
   <img width="816" height="631" alt="Block2" src="https://github.com/user-attachments/assets/0a203607-1bd3-4748-aca0-84e1e8f870b0" />
-
-
+  
+  <p>
+    En el método "SoltarObjeto" se crean dos variables, una para rigidbody y la otra de fixedjoint; luego de estas dos se revisa si "_cajaTransform" las tiene.
+  </p>
+  <p>
+    En caso de que el Rigidbody exista, entonces la gravedad de este pasa a true, y luego, en caso de que el FixedJoint exista, entonces destruirá el FixedJoint. Por último, el "_objetoAgarrado" pasa a ser nulo.
+  </p>
+  
   <img width="573" height="223" alt="Block3" src="https://github.com/user-attachments/assets/4c2aebef-6843-4ba4-b0e9-dd0ecb17315c" />
 
-
+  <p>
+    Siguiendo, en el método "EscañarObjeto", en caso de que el objeto agarrado sea nulo, entonces se detiene en ese punto; luego se crea una variable "_escala", la cual calcula un número intermedio entre 0.11 y 0.2, para luego saber qué valor elegir. Usa el "xRKnob.value", el cual entrega un número entre 0 y 1 según cuánto se gire la perilla, y por último, se asigna el resultado a los X, Y y Z en la escala local de la variable "_objetoAgarrado", aumentado o reducido dependiendo del valor.
+  </p>
+  
   <img width="556" height="139" alt="Block4" src="https://github.com/user-attachments/assets/de50afcc-2fcc-4510-a2a1-62aed2dd9175" />
-
 
  <h2>Resultado</h2>
