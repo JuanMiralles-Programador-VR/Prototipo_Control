@@ -74,10 +74,31 @@
 <h3>
   Agarrar/Soltar/Escalar bloques
 </h3>
-
+  <p>
+    Para saber cómo funciona el agarrar, soltar y escalar los bloques, lo primero es saber qué variables se usan; en este caso, un float para la distancia máxima, un LayerMask que servirá para detectar los bloques, xRKnob para luego buscar el valor de 0 a 1 de la perilla y un transform para saber si está o no agarrando un bloque.
+  </p>
   <img width="359" height="166" alt="Block1" src="https://github.com/user-attachments/assets/7fadc94e-7eb0-4ae8-91bb-81a94a42fc4b" />
-
-
+  <p>
+    En el método "AgarreCaja", lo primero es verificar si el robot tiene un bloque agarrado; si es así, se llama al método "SoltarObjeto" y después se finaliza su ejecución para que no vuelva a agarrar el bloque.
+  </p>
+  <p>
+    En caso de que no sea así, se crea un raycastHit, un vector3 "_origen" y un vector3 "_direcciones", el cual este último es un arreglo que apunta en 4 direcciones, hacia los dos lados, al frente y atrás.
+  </p>
+  <p>
+    Después, se recorre el arreglo "_direcciones" en un ciclo foreach, para saber todo lo que esté dentro de este; siguiendo con un ciclo if, es donde se encuentra el raycast con las variables que se declararon antes.
+  </p>
+  <p>
+    Dentro del if, se crea una variable "_cajaTransform" que será igual al collider del transform que detecte el "_hit" del raycast, y luego un vector3 "_posicion", el cual calcula un punto al lado del jugador.
+  </p>
+  <p>
+    Luego, con "_posición" igual a "_origen", se ajusta la altura del punto para que quede al mismo nivel que el robot; después mueve el bloque hacia el punto para pegarla al robot.
+  </p>
+  <p>
+    Siguiendo, se crea un rigidbody y un fixedjoint, los cuales sirven para revisar si el bloque tiene rigidbody y un fixedjoint.
+  </p>
+  <p>
+    Llegando al if, se pregunta si rigidbody es true y el fixedjoint es nulo. En caso de ser así, entonces al rigidbody se le quita la gravedad, se le añade un componente FixedJoint, se conecta mediante el FixedJoint al robot y "_objetoAgarrado" pasa a ser "_cajaTransform" para indicar que tiene algo en él. Por último, al salir del if, detiene la búsqueda de un bloque para que no agarre otra caja.
+  </p>
   <img width="816" height="631" alt="Block2" src="https://github.com/user-attachments/assets/0a203607-1bd3-4748-aca0-84e1e8f870b0" />
 
 
